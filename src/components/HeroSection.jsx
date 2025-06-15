@@ -1,87 +1,52 @@
-// src/components/HeroSection.js
 import React from "react";
-import { Box, Typography, Button, Container, Grid } from "@mui/material";
+import { Box, Typography, Stack } from "@mui/material";
+import AppButton from "./reusable/AppButton";
+import SectionHeading from "./reusable/SectionHeading";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 const HeroSection = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#f5f5f5",
-        paddingTop: { xs: 8, md: 12 },
-        paddingBottom: { xs: 8, md: 16 },
-        minHeight: "90vh",
-        display: "flex",
-        alignItems: "center",
+        px: 4,
+        py: { xs: 6, md: 12 },
+        backgroundColor: "background.paper",
+        textAlign: "center",
       }}
+      id="home"
     >
-      <Container maxWidth="lg">
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6} data-aos="fade-right">
-            <Typography
-              variant="h2"
-              sx={{
-                fontWeight: "bold",
-                color: "#d32f2f",
-                marginBottom: 2,
-                fontSize: { xs: "2rem", md: "3.5rem" },
-              }}
-            >
-              Empower Your Digital Presence
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{ color: "#757575", marginBottom: 4 }}
-            >
-              We deliver cutting-edge solutions in Web Development, SEO, Digital
-              Marketing, and Graphic Design to fuel your business growth.
-            </Typography>
-            <Box>
-              <Button
-                variant="contained"
-                size="large"
-                sx={{
-                  marginRight: 2,
-                  backgroundColor: "#d32f2f",
-                  "&:hover": {
-                    backgroundColor: "#b71c1c",
-                  },
-                }}
-              >
-                Get Started
-              </Button>
-              <Button
-                variant="outlined"
-                size="large"
-                sx={{
-                  color: "#d32f2f",
-                  borderColor: "#d32f2f",
-                  "&:hover": {
-                    backgroundColor: "#fbe9e7",
-                    borderColor: "#b71c1c",
-                    color: "#b71c1c",
-                  },
-                }}
-              >
-                Explore Services
-              </Button>
-            </Box>
-          </Grid>
+      <SectionHeading data-aos="fade-up">
+        Empowering Your Digital Growth
+      </SectionHeading>
 
-          <Grid item xs={12} md={6} data-aos="zoom-in">
-            <Box
-              component="img"
-              src="https://via.placeholder.com/600x400?text=Doitrocket+Visual"
-              alt="Hero Graphic"
-              sx={{
-                width: "100%",
-                maxHeight: 400,
-                objectFit: "cover",
-                borderRadius: 2,
-              }}
-            />
-          </Grid>
-        </Grid>
-      </Container>
+      <Typography
+        variant="subtitle1"
+        sx={{ color: "text.secondary", maxWidth: 600, mx: "auto" }}
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        At Doitrocket IT Solutions, we build modern websites, boost visibility
+        through SEO, and create stunning brand experiences.
+      </Typography>
+
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        spacing={2}
+        justifyContent="center"
+        mt={4}
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <AppButton variant="contained" color="primary" href="#contact">
+          Get Started
+        </AppButton>
+        <AppButton variant="outlined" color="secondary" href="#services">
+          Learn More
+        </AppButton>
+      </Stack>
     </Box>
   );
 };

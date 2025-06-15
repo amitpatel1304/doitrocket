@@ -1,99 +1,90 @@
-// src/components/ServicesSection.js
 import React from "react";
 import {
   Box,
   Typography,
-  Container,
-  Grid,
-  Card,
-  CardContent,
+  Paper,
+  Stack,
 } from "@mui/material";
-
-import WebIcon from "@mui/icons-material/LaptopMac";
-import SeoIcon from "@mui/icons-material/TrendingUp";
-import MarketingIcon from "@mui/icons-material/Campaign";
-import DesignIcon from "@mui/icons-material/Brush";
+import WebIcon from "@mui/icons-material/Language";
+import MarketingIcon from "@mui/icons-material/TrendingUp";
+import SEOIcon from "@mui/icons-material/Search";
+import DesignServicesIcon from "@mui/icons-material/DesignServices";
+import SectionHeading from "./reusable/SectionHeading";
 
 const services = [
   {
+    icon: <WebIcon sx={{ fontSize: 40, color: "primary.main" }} />,
     title: "Web Development",
     description:
-      "Custom, fast, and responsive websites built for performance and scalability.",
-    icon: <WebIcon sx={{ fontSize: 50, color: "#d32f2f" }} />,
+      "Custom websites built for performance, scalability, and responsive design.",
   },
   {
-    title: "SEO Optimization",
-    description:
-      "Improve visibility and rankings with expert on-page and off-page SEO.",
-    icon: <SeoIcon sx={{ fontSize: 50, color: "#d32f2f" }} />,
-  },
-  {
+    icon: <MarketingIcon sx={{ fontSize: 40, color: "primary.main" }} />,
     title: "Digital Marketing",
     description:
-      "Data-driven digital campaigns to grow leads and brand awareness.",
-    icon: <MarketingIcon sx={{ fontSize: 50, color: "#d32f2f" }} />,
+      "Data-driven campaigns that convert leads into loyal customers.",
   },
   {
+    icon: <SEOIcon sx={{ fontSize: 40, color: "primary.main" }} />,
+    title: "SEO Optimization",
+    description:
+      "Improve visibility and rankings with our proven SEO strategies.",
+  },
+  {
+    icon: <DesignServicesIcon sx={{ fontSize: 40, color: "primary.main" }} />,
     title: "Graphic Designing",
     description:
-      "Creative design solutions for branding, social media, and beyond.",
-    icon: <DesignIcon sx={{ fontSize: 50, color: "#d32f2f" }} />,
+      "Stunning visual designs that reflect your brand identity.",
   },
 ];
 
 const ServicesSection = () => {
   return (
-    <Box sx={{ backgroundColor: "#f9f9f9", py: { xs: 8, md: 12 } }} id="services">
-      <Container maxWidth="lg">
-        <Typography
-          variant="h4"
-          align="center"
-          sx={{ fontWeight: "bold", color: "#d32f2f", mb: 6 }}
-          data-aos="fade-up"
-        >
-          Our Services
-        </Typography>
+    <Box
+      sx={{ px: 4, py: 8, backgroundColor: "background.paper" }}
+      id="services"
+    >
+      <SectionHeading data-aos="fade-up">Our Services</SectionHeading>
 
-        <Grid container spacing={4}>
-          {services.map((service, index) => (
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={3}
-              key={index}
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <Card
-                elevation={3}
-                sx={{
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  textAlign: "center",
-                  padding: 3,
-                  transition: "transform 0.3s",
-                  "&:hover": {
-                    transform: "translateY(-8px)",
-                    boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
-                  },
-                }}
+      <Box
+        display="flex"
+        flexWrap="wrap"
+        justifyContent="center"
+        gap={4}
+        mt={4}
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        {services.map((service, index) => (
+          <Paper
+            key={index}
+            elevation={3}
+            sx={{
+              width: { xs: "100%", sm: "45%", md: "22%" },
+              minWidth: 260,
+              p: 4,
+              textAlign: "center",
+              transition: "transform 0.3s ease",
+              "&:hover": {
+                transform: "translateY(-5px)",
+              },
+            }}
+          >
+            <Stack alignItems="center" spacing={2}>
+              {service.icon}
+              <Typography
+                variant="h6"
+                sx={{ color: "text.primary", fontWeight: 600 }}
               >
-                <Box mb={2}>{service.icon}</Box>
-                <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
-                  {service.title}
-                </Typography>
-                <Typography sx={{ color: "#757575", fontSize: "0.95rem" }}>
-                  {service.description}
-                </Typography>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+                {service.title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {service.description}
+              </Typography>
+            </Stack>
+          </Paper>
+        ))}
+      </Box>
     </Box>
   );
 };

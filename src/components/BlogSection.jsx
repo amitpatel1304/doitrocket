@@ -6,8 +6,9 @@ import {
   Card,
   CardMedia,
   CardContent,
-  Button,
 } from "@mui/material";
+import SectionHeading from "./reusable/SectionHeading";
+import AppButton from "./reusable/AppButton";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -37,24 +38,30 @@ const blogs = [
   },
   {
     id: 4,
-    title: "How to Build Responsive Websites with React",
-    excerpt: "Explore essential techniques for mobile-first and responsive development in 2025...",
+    title: "React vs Laravel: Which to Use for Business Sites?",
+    excerpt: "Explore the pros and cons of combining Laravel backends with React frontends.",
     image: "/images/blog4.jpg",
     link: "#",
-  }
+  },
 ];
 
-const settings = {
+const sliderSettings = {
   dots: true,
   infinite: true,
   speed: 600,
-  slidesToShow: 2,
-  slidesToScroll: 1,
+  slidesToShow: 3,       // 👈 shows 3 blogs
+  slidesToScroll: 1,     // 👈 scrolls 1 blog at a time
   autoplay: true,
-  autoplaySpeed: 4000,
+  autoplaySpeed: 5000,
   responsive: [
     {
-      breakpoint: 900,
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 768,
       settings: {
         slidesToShow: 1,
       },
@@ -62,27 +69,21 @@ const settings = {
   ],
 };
 
+
 const BlogSection = () => {
   return (
-    <Box sx={{ px: 4, py: 8, backgroundColor: "#f4f4f4" }}>
-      <Typography
-        variant="h4"
-        align="center"
-        gutterBottom
-        sx={{ color: "#c62828", fontWeight: "bold" }}
-        data-aos="fade-up"
-      >
-        Latest From Our Blog
-      </Typography>
+    <Box sx={{ px: 4, py: 8, backgroundColor: "background.paper" }} id="blog">
+      <SectionHeading data-aos="fade-up">Latest From Our Blog</SectionHeading>
 
-      <Box mt={4} data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-        <Slider {...settings}>
-          {blogs.map((blog) => (
-            <Box key={blog.id} px={2}>
+      <Box mt={4} data-aos="fade-up" data-aos-delay="100">
+        <Slider {...sliderSettings}>
+          {blogs.map((blog, index) => (
+            <Box key={blog.id} px={2} display="flex" justifyContent="center">
               <Card
                 elevation={3}
                 sx={{
-                  height: "100%",
+                  width: "100%",
+                  maxWidth: 500,
                   display: "flex",
                   flexDirection: "column",
                   transition: "transform 0.3s ease",
@@ -98,20 +99,26 @@ const BlogSection = () => {
                   alt={blog.title}
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography variant="h6" sx={{ color: "#212121", fontWeight: 600 }}>
+                  <Typography
+                    variant="h6"
+                    sx={{ color: "primary.main", fontWeight: 600 }}
+                  >
                     {blog.title}
                   </Typography>
-                  <Typography variant="body2" sx={{ mt: 1, mb: 2, color: "#555" }}>
+                  <Typography
+                    variant="body2"
+                    sx={{ mt: 1, mb: 2, color: "text.secondary" }}
+                  >
                     {blog.excerpt}
                   </Typography>
-                  <Button
+                  <AppButton
                     href={blog.link}
                     variant="outlined"
-                    color="error"
+                    color="secondary"
                     size="small"
                   >
                     Read More
-                  </Button>
+                  </AppButton>
                 </CardContent>
               </Card>
             </Box>

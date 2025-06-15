@@ -1,47 +1,51 @@
-// src/components/AboutSection.js
 import React from "react";
-import { Box, Typography, Container, Grid } from "@mui/material";
+import { Box, Grid, Typography, Stack } from "@mui/material";
+import SectionHeading from "./reusable/SectionHeading";
+import AppButton from "./reusable/AppButton";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 const AboutSection = () => {
   return (
-    <Box
-      sx={{
-        backgroundColor: "#ffffff",
-        py: { xs: 8, md: 12 },
-      }}
-      id="about"
-    >
-      <Container maxWidth="lg">
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6} data-aos="fade-up">
-            <Box
-              component="img"
-              src="https://via.placeholder.com/500x350?text=Doitrocket+Team"
-              alt="About Doitrocket"
-              sx={{ width: "100%", borderRadius: 2 }}
-            />
-          </Grid>
-          <Grid item xs={12} md={6} data-aos="fade-left">
-            <Typography
-              variant="h4"
-              sx={{
-                fontWeight: "bold",
-                color: "#d32f2f",
-                marginBottom: 2,
-              }}
-            >
-              About Doitrocket
-            </Typography>
-            <Typography sx={{ color: "#424242", fontSize: "1.1rem" }}>
-              At Doitrocket IT Solutions, we help businesses launch their
-              digital presence through powerful web applications, innovative
-              marketing strategies, and visually striking design. Our dedicated
-              team turns ideas into scalable solutions — fast, modern, and
-              effective.
-            </Typography>
-          </Grid>
+    <Box sx={{ px: 4, py: 8, backgroundColor: "background.default" }} id="about">
+      <SectionHeading data-aos="fade-up">Who We Are</SectionHeading>
+
+      <Grid container spacing={6} alignItems="center" mt={2}>
+        {/* Left Text */}
+        <Grid item xs={12} md={6} data-aos="fade-right">
+          <Typography variant="h6" sx={{ color: "primary.main", fontWeight: 600 }}>
+            Your Digital Growth Partner
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{ color: "text.secondary", mt: 2, lineHeight: 1.7 }}
+          >
+            Doitrocket IT Solutions is a full-service web agency helping businesses
+            establish an impactful digital presence. From custom website development
+            to result-oriented digital marketing, we deliver solutions that drive growth.
+          </Typography>
+          <AppButton
+            variant="contained"
+            color="primary"
+            sx={{ mt: 3 }}
+            href="#services"
+          >
+            Explore Our Services
+          </AppButton>
         </Grid>
-      </Container>
+
+        {/* Right Image */}
+        <Grid item xs={12} md={6} data-aos="fade-left">
+          <Box
+            component="img"
+            src="/images/about-us.jpg"
+            alt="About Us"
+            sx={{ width: "100%", borderRadius: 2 }}
+          />
+        </Grid>
+      </Grid>
     </Box>
   );
 };

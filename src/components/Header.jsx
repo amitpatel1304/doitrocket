@@ -40,8 +40,8 @@ export default function Header() {
       </Box>
       <List>
         {pages.map((page) => (
-          <ListItem button key={page}>
-            <ListItemText primary={page} />
+          <ListItem button  key={page}>
+            <ListItemText   primary={page} />
           </ListItem>
         ))}
       </List>
@@ -53,10 +53,7 @@ export default function Header() {
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         {/* Logo / Brand */}
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <RocketLaunchIcon sx={{ color: 'red', mr: 1 }} />
-          <Typography variant="h6" noWrap sx={{ color: '#d32f2f', fontWeight: 700 }}>
-            Doitrocket
-          </Typography>
+          <img src='/doitrocket.png' alt="Doitrocket Logo" style={{ width: 110, height: 80, padding: 5}} />
         </Box>
 
         {/* Desktop Nav */}
@@ -66,11 +63,11 @@ export default function Header() {
               <Button
                 key={page}
                 sx={{
-                  color: '#555',
+                  color: 'secondary.main',
                   mx: 1,
                   fontWeight: 500,
                   '&:hover': {
-                    color: '#d32f2f',
+                    color: 'primary.main',
                     backgroundColor: 'rgba(211, 47, 47, 0.08)',
                   },
                 }}

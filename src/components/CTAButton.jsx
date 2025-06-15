@@ -23,9 +23,9 @@ const FloatingActions = () => {
   const handleClick = (type) => {
     if (expanded === type) {
       if (type === "whatsapp") {
-        window.open("https://wa.me/919876543210", "_blank");
+        window.open("https://wa.me/917805058023", "_blank");
       } else if (type === "phone") {
-        window.location.href = "tel:+919876543210";
+        window.location.href = "tel:+919981255949";
       }
     } else {
       setExpanded(type);
