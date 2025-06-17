@@ -72,7 +72,7 @@ const sliderSettings = {
 
 const BlogSection = () => {
   return (
-    <Box sx={{ px: 4, py: 8, backgroundColor: "background.paper" }} id="blog">
+    <Box sx={{ px: 4, py: 8, backgroundColor: "background.default" }} id="blog">
       <SectionHeading data-aos="fade-up">Latest From Our Blog</SectionHeading>
 
       <Box mt={4} data-aos="fade-up" data-aos-delay="100">

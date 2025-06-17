@@ -9,8 +9,8 @@ import {
 } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
+// import LocationOnIcon from "@mui/icons-material/LocationOn";
+// import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -25,7 +25,7 @@ const ContactUsSection = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <Box sx={{ px: 4, py: 8, backgroundColor: "background.default" }} id="contact">
+    <Box sx={{ px: 4, py: 8, backgroundColor: "background.paper" }} id="contact">
       <SectionHeading data-aos="fade-up">Contact Us</SectionHeading>
 
       <Box

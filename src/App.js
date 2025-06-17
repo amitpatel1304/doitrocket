@@ -1,28 +1,23 @@
 import React from "react";
 import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
 import AOSInitializer from "./components/AOSInitializer";
-import AboutSection from "./components/AboutSection";
-import ServicesSection from "./components/ServicesSection";
-import TestimonialsSection from "./components/TestimonialsSection";
-import BlogSection from "./components/BlogSection";
-import ContactUsSection from "./components/ContactUsSection";
-import Footer from "./components/Footer";
 import FloatingActions from "./components/CTAButton";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AboutUs from "./pages/AboutUs";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
-    <AOSInitializer />
-      <Header />
-      <HeroSection/>
-      <AboutSection/>
-      <ServicesSection />
-      <TestimonialsSection />
-      <BlogSection />
-      <ContactUsSection/>
-      <Footer/>
-      <FloatingActions/>
+      <Router>
+        <AOSInitializer />
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutUs />} />
+        </Routes>
+        <FloatingActions />
+      </Router>
     </>
   );
 }
