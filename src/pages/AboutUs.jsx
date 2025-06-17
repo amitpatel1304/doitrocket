@@ -33,11 +33,118 @@ const AboutUs = () => {
         </Typography>
       </Box>
 
+      {/* Meet the Founders */}
+<Box
+  sx={{ px: 4, py: 10, backgroundColor: "background.default" }}
+  data-aos="zoom-in-up"
+  id="founders"
+>
+  <Typography
+    variant="h4"
+    align="center"
+    gutterBottom
+    sx={{ color: "primary.main", fontWeight: "bold" }}
+  >
+    Meet the Founders
+  </Typography>
+
+  <Typography
+    variant="subtitle1"
+    align="center"
+    sx={{ maxWidth: 700, mx: "auto", color: "text.secondary", mb: 6 }}
+  >
+    The visionaries behind Doitrocket — driving creativity, performance, and digital transformation.
+  </Typography>
+
+  <Grid container spacing={6} justifyContent="center">
+    {/* Founder 1 */}
+    <Grid item xs={12} md={5}>
+      <Box textAlign="center">
+        <Box
+          component="img"
+          src="/images/founder1.jpg"
+          alt="Ravi Verma"
+          sx={{
+            width: 140,
+            height: 140,
+            borderRadius: "50%",
+            border: "4px solid",
+            borderColor: "primary.main",
+            mb: 2,
+            boxShadow: 4,
+            transition: "transform 0.3s ease",
+            "&:hover": { transform: "scale(1.05)" }
+          }}
+        />
+        <Typography variant="h6" sx={{ fontWeight: 700, color: "primary.main" }}>
+          Ravi Verma
+        </Typography>
+        <Typography variant="subtitle2" sx={{ color: "text.secondary", mb: 1 }}>
+          CEO & Founder
+        </Typography>
+        <Typography variant="body2" sx={{ color: "text.secondary", mb: 2, maxWidth: 320, mx: "auto" }}>
+          With a bold vision for innovation, Ravi transforms ideas into world-class digital products and leads strategy at Doitrocket.
+        </Typography>
+        <Button
+          href="https://linkedin.com/in/raviverma"
+          target="_blank"
+          size="small"
+          variant="outlined"
+          color="secondary"
+        >
+          Connect on LinkedIn
+        </Button>
+      </Box>
+    </Grid>
+
+    {/* Founder 2 */}
+    <Grid item xs={12} md={5}>
+      <Box textAlign="center">
+        <Box
+          component="img"
+          src="/images/founder2.jpg"
+          alt="Anjali Sharma"
+          sx={{
+            width: 140,
+            height: 140,
+            borderRadius: "50%",
+            border: "4px solid",
+            borderColor: "secondary.main",
+            mb: 2,
+            boxShadow: 4,
+            transition: "transform 0.3s ease",
+            "&:hover": { transform: "scale(1.05)" }
+          }}
+        />
+        <Typography variant="h6" sx={{ fontWeight: 700, color: "secondary.main" }}>
+          Anjali Sharma
+        </Typography>
+        <Typography variant="subtitle2" sx={{ color: "text.secondary", mb: 1 }}>
+          CEO & Founder
+        </Typography>
+        <Typography variant="body2" sx={{ color: "text.secondary", mb: 2, maxWidth: 320, mx: "auto" }}>
+          A creative force who breathes life into brands with visionary design and human-centered thinking.
+        </Typography>
+        <Button
+          href="https://linkedin.com/in/anjalisharma"
+          target="_blank"
+          size="small"
+          variant="outlined"
+          color="secondary"
+        >
+          Connect on LinkedIn
+        </Button>
+      </Box>
+    </Grid>
+  </Grid>
+</Box>
+
+
       {/* Our Mission */}
       <Grid
         container
         spacing={4}
-        sx={{ px: 4, py: 8 }}
+        sx={{ px: 4, py: 8, backgroundColor: "background.paper" }}
         alignItems="center"
         data-aos="fade-up"
       >
@@ -58,7 +165,7 @@ const AboutUs = () => {
       </Grid>
 
       {/* Our Vision */}
-      <Box sx={{ px: 4, py: 8, backgroundColor: "background.paper" }} data-aos="fade-up">
+      <Box sx={{ px: 4, py: 8, backgroundColor: "background.default" }} data-aos="fade-up">
         <SectionHeading>Our Vision</SectionHeading>
         <Typography
           variant="body1"
