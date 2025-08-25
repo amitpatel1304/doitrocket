@@ -12,36 +12,38 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import SectionHeading from "./reusable/SectionHeading";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import amit from "../assets/images/amit.jpg";
+import prashant from "../assets/images/prashant.png";
 
 AOS.init();
 
 const teamMembers = [
   {
-    name: "Ravi Verma",
-    role: "CEO & Founder",
-    image: "/images/team1.jpg",
+    name: "Amit Patel",
+    role: "Managing Director & Developer",
+    image: amit,
     bio: "Visionary leader driving innovation across all departments.",
-    linkedin: "https://linkedin.com/in/raviverma",
+    // linkedin: "https://linkedin.com/in/raviverma",
   },
   {
-    name: "Anjali Sharma",
-    role: "UI/UX Designer",
-    image: "/images/team2.jpg",
-    bio: "Designing clean and modern interfaces for web and mobile apps.",
-    linkedin: "https://linkedin.com/in/anjalisharma",
+    name: "Prashant Patel",
+    role: "Markeing Head & Digital Strategist",
+    image: prashant,
+    bio: "Leads our growth strategy through digital marketing and SEO.",
+    // linkedin: "https://linkedin.com/in/anjalisharma",
   },
   {
-    name: "Mohit Singh",
-    role: "Marketing Head",
+    name: "Ishika Patel",
+    role: "Content Creator & SEO Specialist",
     image: "/images/team3.jpg",
     bio: "Leads our growth strategy through digital marketing and SEO.",
   },
   {
-    name: "Priya Nair",
+    name: "Mukesh Tak",
     role: "Full Stack Developer",
     image: "/images/team4.jpg",
-    bio: "Develops efficient, scalable applications with React and Laravel.",
-    github: "https://github.com/priyanair",
+    bio: "Develops efficient, scalable applications",
+    // github: "https://github.com/priyanair",
   },
 ];
 

@@ -45,7 +45,7 @@ const Footer = () => {
             Quick Links
           </Typography>
           <Stack spacing={1}>
-            {["Home", "About", "Services", "Blog", "Contact"].map((item) => (
+            {["Home", "About", "Services", "Contact"].map((item) => (
               <Link
                 key={item}
                 href={`#${item.toLowerCase()}`}

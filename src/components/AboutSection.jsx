@@ -1,31 +1,64 @@
 import React from "react";
-import { Box, Grid, Typography, Stack } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import SectionHeading from "./reusable/SectionHeading";
 import AppButton from "./reusable/AppButton";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import aboutbanner from "../assets/images/about-banner.png";
 
 AOS.init();
 
 const AboutSection = () => {
   return (
     <Box sx={{ px: 4, py: 8, backgroundColor: "background.default" }} id="about">
+      {/* Section Heading */}
       <SectionHeading data-aos="fade-up">Who We Are</SectionHeading>
 
-      <Grid container spacing={6} alignItems="center" mt={2}>
-        {/* Left Text */}
-        <Grid item xs={12} md={6} data-aos="fade-right">
-          <Typography variant="h6" sx={{ color: "primary.main", fontWeight: 600 }}>
-            Your Digital Growth Partner
+      {/* Flex Container */}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 5,
+        }}
+      >
+        {/* Left Content */}
+        <Box
+          data-aos="fade-right"
+          sx={{
+            flex: 1,
+            textAlign: { xs: "center", md: "left" },
+          }}
+        >
+          <Typography
+            variant="h5"
+            sx={{ color: "primary.main", fontWeight: 700 }}
+          >
+            Your Trusted Digital Growth Partner
           </Typography>
+
           <Typography
             variant="body1"
-            sx={{ color: "text.secondary", mt: 2, lineHeight: 1.7 }}
+            sx={{ color: "text.secondary", mt: 2, lineHeight: 1.8 }}
           >
-            Doitrocket IT Solutions is a full-service web agency helping businesses
-            establish an impactful digital presence. From custom website development
-            to result-oriented digital marketing, we deliver solutions that drive growth.
+            At <strong>Doitrocket IT Solutions</strong>, we specialize in
+            creating impactful digital experiences that empower businesses to
+            grow. From custom website development and result-driven SEO to
+            digital marketing strategies and brand-centric designs, we make sure
+            your business stands out in a competitive world.
           </Typography>
+
+          <Typography
+            variant="body1"
+            sx={{ color: "text.secondary", mt: 2, lineHeight: 1.8 }}
+          >
+            Our passionate team thrives on innovation, creativity, and delivering
+            measurable results. We don’t just build websites — we craft digital
+            solutions that help your business achieve long-term success.
+          </Typography>
+
           <AppButton
             variant="contained"
             color="primary"
@@ -34,18 +67,28 @@ const AboutSection = () => {
           >
             Explore Our Services
           </AppButton>
-        </Grid>
+        </Box>
 
         {/* Right Image */}
-        <Grid item xs={12} md={6} data-aos="fade-left">
+        <Box
+          data-aos="fade-up"
+          sx={{
+            flex: 1,
+            display: "flex",
+            justifyContent: { xs: "center", md: "flex-end" },
+          }}
+        >
           <Box
             component="img"
-            src="/images/about-us.jpg"
+            src={aboutbanner}
             alt="About Us"
-            sx={{ width: "100%", borderRadius: 2 }}
+            sx={{
+              width: "100%",
+              maxWidth: 500,
+            }}
           />
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
     </Box>
   );
 };

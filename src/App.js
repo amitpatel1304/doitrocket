@@ -5,6 +5,7 @@ import FloatingActions from "./components/CTAButton";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AboutUs from "./pages/AboutUs";
 import Home from "./pages/Home";
+import Articitamol from "./pages/Articitamol";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/articitamol" element={<Articitamol />} />
         </Routes>
         <FloatingActions />
       </Router>
