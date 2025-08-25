@@ -8,16 +8,12 @@ import {
   Stack,
   Paper,
   Divider,
-  Card,
-  CardMedia,
-  CardContent,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import qrCode from "../assets/images/qr-code.jpg";
 import bookCover1 from "../assets/images/artiictamol.jpg";
 import bookCover2 from "../assets/images/artiictamol1.jpg";
 
-import recBook1 from "../assets/images/book1.jpg";
 
 const StyledModal = styled(Modal)(() => ({
   display: "flex",
